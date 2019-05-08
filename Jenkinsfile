@@ -10,11 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
-                sh 'cd /var/www/qa.divethree.com'
-                sh 'python3 -m venv env'
-                sh '. env/bin/activate'
-                sh 'pip install -r requirements.txt'
+                echo 'Building...'               
             }
         }
         stage('Test') {
