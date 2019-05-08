@@ -2,7 +2,7 @@ pipeline {
 
     agent {
         docker {
-            image 'apidemo'
+            image 'protosac/apidemo:latest'
             args '-u root'
         }
     }
