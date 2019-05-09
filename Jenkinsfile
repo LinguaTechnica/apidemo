@@ -1,16 +1,12 @@
 pipeline {
 
-    agent {
-        docker {
-            image 'protosac/apidemo:latest'
-            args '-u root'
-        }
-    }
+    agent { dockerfile true }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'               
+                echo 'Building...'
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Test') {
